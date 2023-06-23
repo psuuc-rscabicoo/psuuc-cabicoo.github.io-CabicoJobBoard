@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+   
+.container {
+  padding-bottom: 3rem;
+  margin-bottom: 2rem;
+  margin-top: 5rem;
+  background-color: #f2f2f2; /* Add background color here */
+}
+
+.forgot {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  margin-top: 1.5rem;
+  background-color: #fff; /* Add background color here */
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+.form-text {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.alert {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.text-primary {
+  color: #007bff;
+}
+
+.text-medium {
+  font-weight: 500;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container padding-bottom-3x mb-2 mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="forgot">
+                    <h2>Forgot your password?</h2>
+                    <p>Change your password in three easy steps. This will help you secure your password!</p>
+                    <ol class="list-unstyled">
+                        <li><span class="text-primary text-medium">1. </span>Enter your email address below.</li>
+                        <li><span class="text-primary text-medium">2. </span>Our system will send you a temporary link</li>
+                        <li><span class="text-primary text-medium">3. </span>Use the link to reset your password</li>
+                    </ol>
+                </div>
+
+                <form class="card mt-4" id="password-recovery-form">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="email-for-pass">Enter your email address</label>
+                            <input class="form-control" type="email" id="email-for-pass" required="">
+                            <small class="form-text text-muted">Enter the email address you used during the registration on BBBootstrap.com. Then we'll email a link to this address.</small>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Recover Password</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("password-recovery-form");
+
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const emailInput = document.getElementById("email-for-pass");
+                const email = emailInput.value;
+
+                // Perform email validation here (e.g., using regular expressions)
+
+                // If the email is valid, send a request to the server
+                if (email) {
+                    // Simulate password recovery request
+                    simulatePasswordRecovery(email);
+                }
+            });
+
+            function simulatePasswordRecovery(email) {
+                // Simulate the server request and response
+                setTimeout(function() {
+                    // Assuming the password recovery request was successful
+                    displayMessage("success", "Password recovery link sent to your email address.");
+                }, 1500);
+            }
+
+            function displayMessage(type, message) {
+                const messageContainer = document.createElement("div");
+                messageContainer.className = `alert alert-${type} mt-4`;
+                messageContainer.textContent = message;
+
+                form.appendChild(messageContainer);
+
+                // Remove the message after a certain time (e.g., 5 seconds)
+                setTimeout(function() {
+                    messageContainer.remove();
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+
+</html>

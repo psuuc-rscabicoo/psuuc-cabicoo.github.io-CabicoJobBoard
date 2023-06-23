@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Services</title>
+  <style>
+    /* Reset default styles */
+body, h1, h2, h3, p, div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+  line-height: 1.5;
+}
+
+header {
+  background-color: #333;
+  padding: 20px;
+}
+
+h1 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#service-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.service {
+  flex: 0 0 33.33%;
+  padding: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.service:hover {
+  background-color: #f2f2f2;
+}
+
+.service.active {
+  background-color: #333;
+}
+
+.service h3 {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.service p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Services</h1>
+  </header>
+
+  <section>
+    <h2>Our Services</h2>
+    <div id="service-list">
+      <div class="service">
+        <a href="jobposting.html"><h3>Job Posting</h3></a>
+        
+        <p>Reach a wide audience by posting your job listings on our platform.</p>
+      </div>
+      <div class="service">
+        <a href="resumesearch.html"> <h3>Resume Search</h3></a>
+       
+        <p>Access our extensive database of resumes to find the perfect candidates.</p>
+      </div>
+      <div class="service">
+        <a href="company branding.html"> <h3>Company Branding</h3></a>
+       
+        <p>Enhance your company's image and attract top talent through effective branding.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // JavaScript code to handle service selection
+
+    // Function to handle service selection
+    function selectService(event) {
+      var selectedService = event.target;
+      var services = document.getElementsByClassName('service');
+
+      // Remove active class from all services
+      for (var i = 0; i < services.length; i++) {
+        services[i].classList.remove('active');
+      }
+
+      // Add active class to selected service
+      selectedService.classList.add('active');
+    }
+
+    // Attach event listener to each service
+    var services = document.getElementsByClassName('service');
+    for (var i = 0; i < services.length; i++) {
+      services[i].addEventListener('click', selectService);
+    }
+  </script>
+</body>
+</html>

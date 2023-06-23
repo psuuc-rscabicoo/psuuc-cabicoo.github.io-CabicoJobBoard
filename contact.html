@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact</title>
+  <style>
+    /* Reset default styles */
+body, h1, h2, p, form, label, input, textarea, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+  line-height: 1.5;
+}
+
+header {
+  background-color: #333;
+  padding: 20px;
+}
+
+h1 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+form {
+  margin-top: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  height: 100px;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.alert {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Contact</h1>
+  </header>
+
+  <section>
+    <h2>Send us a message</h2>
+    <form id="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+      <label for="message">Message:</label>
+      <textarea id="message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <script>
+    // JavaScript code to handle form submission
+
+    // Function to handle form submission
+    function sendMessage(event) {
+      event.preventDefault(); // Prevent page reload on form submission
+
+      // Get form values
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
+
+      // You can customize this part to send the message via email or save it in a database
+
+      // Display success message
+      alert('Message sent successfully!');
+
+      // Reset form
+      document.getElementById('contact-form').reset();
+    }
+
+    // Attach event listener to form submission
+    document.getElementById('contact-form').addEventListener('submit', sendMessage);
+  </script>
+</body>
+</html>

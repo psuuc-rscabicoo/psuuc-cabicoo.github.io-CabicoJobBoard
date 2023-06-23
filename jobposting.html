@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Posting</title>
+  <style>
+    /* Reset default styles */
+body, h1, h2, p, form, label, input, textarea, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+  line-height: 1.5;
+}
+
+header {
+  background-color: #333;
+  padding: 20px;
+}
+
+h1 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+form {
+  margin-top: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  height: 100px;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.alert {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Job Posting</h1>
+  </header>
+
+  <section>
+    <h2>Post a Job</h2>
+    <form id="job-post-form">
+      <label for="title">Job Title:</label>
+      <input type="text" id="title" required>
+      <label for="company">Company:</label>
+      <input type="text" id="company" required>
+      <label for="location">Location:</label>
+      <input type="text" id="location" required>
+      <label for="description">Job Description:</label>
+      <textarea id="description" required></textarea>
+      <button type="submit">Post Job</button>
+    </form>
+  </section>
+
+  <script>
+    // JavaScript code to handle job posting
+
+    // Function to handle job posting
+    function postJob(event) {
+      event.preventDefault(); // Prevent page reload on form submission
+
+      // Get form values
+      var title = document.getElementById('title').value;
+      var company = document.getElementById('company').value;
+      var location = document.getElementById('location').value;
+      var description = document.getElementById('description').value;
+
+      // You can customize this part to save the job posting to a database or perform any other actions
+
+      // Display success message
+      alert('Job posted successfully!');
+
+      // Reset form
+      document.getElementById('job-post-form').reset();
+    }
+
+    // Attach event listener to form submission
+    document.getElementById('job-post-form').addEventListener('submit', postJob);
+  </script>
+</body>
+</html>

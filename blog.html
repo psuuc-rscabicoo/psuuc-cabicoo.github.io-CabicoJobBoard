@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Board</title>
+  <style>
+    /* Reset default styles */
+body, h1, h2, h3, p, form {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+  line-height: 1.5;
+}
+
+header {
+  background-color: #333;
+  padding: 20px;
+}
+
+h1 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+button {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.job-listing {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.job-listing h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.job-listing p {
+  margin-bottom: 3px;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Job Board</h1>
+  </header>
+
+  <section>
+    <h2>Recent Jobs</h2>
+    <div id="job-list"></div>
+  </section>
+
+  <section>
+    <h2>Add a Job</h2>
+    <form id="job-form">
+      <label for="title">Title:</label>
+      <input type="text" id="title" required>
+      <label for="company">Company:</label>
+      <input type="text" id="company" required>
+      <label for="location">Location:</label>
+      <input type="text" id="location" required>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <script>
+    // JavaScript code to handle form submission and display job listings
+
+    // Function to handle form submission
+    function addJob(event) {
+      event.preventDefault(); // Prevent page reload on form submission
+
+      // Get form values
+      var title = document.getElementById('title').value;
+      var company = document.getElementById('company').value;
+      var location = document.getElementById('location').value;
+
+      // Create job listing element
+      var jobListing = document.createElement('div');
+      jobListing.classList.add('job-listing');
+      jobListing.innerHTML = '<h3>' + title + '</h3>' +
+                             '<p><strong>Company:</strong> ' + company + '</p>' +
+                             '<p><strong>Location:</strong> ' + location + '</p>';
+
+      // Append job listing to job list
+      var jobList = document.getElementById('job-list');
+      jobList.appendChild(jobListing);
+
+      // Reset form
+      document.getElementById('job-form').reset();
+    }
+
+    // Attach event listener to form submission
+    document.getElementById('job-form').addEventListener('submit', addJob);
+  </script>
+</body>
+</html>

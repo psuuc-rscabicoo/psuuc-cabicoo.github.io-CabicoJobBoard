@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Company Branding</title>
+  <style>
+/* Reset default styles */
+body, h1, h2, p, div, img {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+  line-height: 1.5;
+}
+
+header {
+  background-color: #333;
+  padding: 20px;
+}
+
+h1 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#company-info {
+  display: flex;
+  align-items: center;
+}
+
+#company-info img {
+  width: 100px;
+  margin-right: 20px;
+}
+
+#company-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#company-description {
+  font-size: 16px;
+  color: #666;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Company Branding</h1>
+  </header>
+
+  <section>
+    <h2>About Our Company</h2>
+    <div id="company-info">
+      <img src="logos.png" alt="Company Logo">
+      <section>
+        <h2>Welcome to Acme Corporation</h2>
+        <p>
+          Acme Corporation is a leading global provider of innovative solutions. With a rich history spanning over three decades, we have established ourselves as pioneers in the industry.
+        </p><br>
+        <p>
+          Our dedicated team of professionals is passionate about delivering exceptional results and exceeding client expectations. We strive to create cutting-edge products and services that drive success for our customers.
+        </p><br>
+        <p>
+          At Acme Corporation, we embrace a culture of collaboration, creativity, and continuous improvement. We foster an environment where employees are empowered to unleash their full potential and make a significant impact.
+        </p><br>
+        <p>
+          Our commitment to excellence has earned us numerous accolades and a loyal customer base. We take pride in our track record of delivering outstanding value and driving growth for our clients.
+        </p><br>
+        <p>
+          Join us on this exciting journey as we continue to innovate, expand, and shape the future. Together, we can achieve remarkable things.
+        </p><br>
+      </section>
+    </div>
+  </section>
+
+  <script>
+    // JavaScript code to update company branding information
+    var companyName = "Acme Corporation";
+    var companyDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut semper massa, in consectetur mauris. Sed fringilla, massa ut malesuada tincidunt, sem tellus ullamcorper enim.";
+
+    // Update company branding information
+    document.getElementById('company-name').textContent = companyName;
+    document.getElementById('company-description').textContent = companyDescription;
+  </script>
+</body>
+</html>

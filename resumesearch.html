@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Search</title>
+  <style>
+    /* Reset default styles */
+body, h1, h2, p, form, label, input, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+  line-height: 1.5;
+}
+
+header {
+  background-color: #333;
+  padding: 20px;
+}
+
+h1 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+form {
+  margin-top: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+#search-results {
+  margin-top: 20px;
+}
+
+#search-results h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#search-results p {
+  color: #666;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Resume Search</h1>
+  </header>
+
+  <section>
+    <h2>Search Resumes</h2>
+    <form id="resume-search-form">
+      <label for="keywords">Keywords:</label>
+      <input type="text" id="keywords" required>
+      <label for="location">Location:</label>
+      <input type="text" id="location" required>
+      <button type="submit">Search</button>
+    </form>
+  </section>
+
+  <div id="search-results">
+    <!-- Results will be displayed here -->
+  </div>
+
+  <script>
+    // JavaScript code to handle resume search
+
+    // Function to handle resume search
+    function searchResumes(event) {
+      event.preventDefault(); // Prevent page reload on form submission
+
+      // Get form values
+      var keywords = document.getElementById('keywords').value;
+      var location = document.getElementById('location').value;
+
+      // You can customize this part to perform the resume search and display the results
+      var resultsContainer = document.getElementById('search-results');
+      resultsContainer.innerHTML = '<h3>Search Results:</h3>' +
+                                    '<p>No results found.</p>';
+
+      // Reset form
+      document.getElementById('resume-search-form').reset();
+    }
+
+    // Attach event listener to form submission
+    document.getElementById('resume-search-form').addEventListener('submit', searchResumes);
+  </script>
+</body>
+</html>
